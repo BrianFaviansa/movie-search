@@ -2,7 +2,7 @@
 
 $('.search-button').on('click', function () {
     $.ajax({
-        url: 'http://www.omdbapi.com/?apikey=dd247b32&s=' + $('.search-keyword').val(),
+        url: 'https://www.omdbapi.com/?apikey=dd247b32&s=' + $('.search-keyword').val(),
         success: results => {
             const movies = results.Search;
             if (movies) {
@@ -15,7 +15,7 @@ $('.search-button').on('click', function () {
                 // ketika tombol detail diklik
                 $('.modal-detail-button').on('click', function () {
                     $.ajax({
-                        url: 'http://www.omdbapi.com/?apikey=dd247b32&i=' + $(this).data('imdbid'),
+                        url: 'https://www.omdbapi.com/?apikey=dd247b32&i=' + $(this).data('imdbid'),
                         success: m => {
                             if (m.Response === "True") {
                                 const movieDetail = showMovieDetail(m);
